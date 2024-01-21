@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>help.lixin.eventuate.cdc</groupId>
+    <artifactId>eventuate-cdc-rocketmq-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>eventuate-cdc-rocketmq-parent ${project.version}</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <rocketmq-client.version>4.9.7</rocketmq-client.version>
+
+        <spring.boot.version>2.6.11</spring.boot.version>
+
+        <eventuate-cdc-data-producer-wrappers.version>0.16.0.RELEASE</eventuate-cdc-data-producer-wrappers.version>
+
+        <eventuate-messaging-rocketmq.version>1.0.0-SNAPSHOT</eventuate-messaging-rocketmq.version>
+        <eventuate-common-eventuate-local.version>0.18.0.RELEASE</eventuate-common-eventuate-local.version>
+        <eventuate-local-java-cdc-connector-common.version>0.16.0.RELEASE</eventuate-local-java-cdc-connector-common.version>
+        <eventuate-local-java-cdc-connector-mysql-binlog.version>0.16.0.RELEASE</eventuate-local-java-cdc-connector-mysql-binlog.version>
+        <eventuate-tram-cdc-connector.version>0.16.0.RELEASE</eventuate-tram-cdc-connector.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.rocketmq</groupId>
+                <artifactId>rocketmq-client</artifactId>
+                <version>${rocketmq-client.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.eventuate.cdc</groupId>
+                <artifactId>eventuate-cdc-data-producer-wrappers</artifactId>
+                <version>${eventuate-cdc-data-producer-wrappers.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.eventuate.common</groupId>
+                <artifactId>eventuate-common-eventuate-local</artifactId>
+                <version>${eventuate-common-eventuate-local.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.eventuate.cdc</groupId>
+                <artifactId>eventuate-local-java-cdc-connector-common</artifactId>
+                <version>${eventuate-local-java-cdc-connector-common.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.eventuate.cdc</groupId>
+                <artifactId>eventuate-local-java-cdc-connector-mysql-binlog</artifactId>
+                <version>${eventuate-local-java-cdc-connector-mysql-binlog.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.eventuate.cdc</groupId>
+                <artifactId>eventuate-tram-cdc-connector</artifactId>
+                <version>${eventuate-tram-cdc-connector.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>help.lixin.eventuate</groupId>
+                <artifactId>eventuate-messaging-rocketmq-producer</artifactId>
+                <version>${eventuate-messaging-rocketmq.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>help.lixin.eventuate</groupId>
+                <artifactId>eventuate-messaging-rocketmq-spring-producer</artifactId>
+                <version>${eventuate-messaging-rocketmq.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>help.lixin.eventuate</groupId>
+                <artifactId>eventuate-messaging-rocketmq-spring-consumer</artifactId>
+                <version>${eventuate-messaging-rocketmq.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <modules>
+        <module>rocketmq-eventuate-cdc-data-producer-wrappers</module>
+        <module>rocketmq-eventuate-tram-cdc-connector</module>
+        <module>rocketmq-eventuate-tram-cdc-autoconfigure</module>
+    </modules>
+</project>

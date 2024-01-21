@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>help.lixin.eventuate.cdc</groupId>
+        <artifactId>eventuate-cdc-rocketmq-parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <groupId>help.lixin.eventuate.cdc</groupId>
+    <artifactId>rocketmq-eventuate-tram-cdc-connector</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>rocketmq-eventuate-tram-cdc-connector ${project.version}</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.eventuate.cdc</groupId>
+            <artifactId>eventuate-cdc-data-producer-wrappers</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.eventuate.common</groupId>
+            <artifactId>eventuate-common-eventuate-local</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.eventuate.cdc</groupId>
+            <artifactId>eventuate-local-java-cdc-connector-common</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.eventuate.cdc</groupId>
+            <artifactId>eventuate-local-java-cdc-connector-mysql-binlog</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.eventuate.cdc</groupId>
+            <artifactId>eventuate-tram-cdc-connector</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>help.lixin.eventuate.cdc</groupId>
+            <artifactId>rocketmq-eventuate-cdc-data-producer-wrappers</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>help.lixin.eventuate</groupId>
+            <artifactId>eventuate-messaging-rocketmq-spring-producer</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>help.lixin.eventuate</groupId>
+            <artifactId>eventuate-messaging-rocketmq-spring-consumer</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <excludes>
+                        <exclude>io.eventuate.tram.cdc.connector.configuration.condition.KafkaCondition</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

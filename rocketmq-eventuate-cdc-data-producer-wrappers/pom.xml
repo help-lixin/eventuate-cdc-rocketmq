@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>help.lixin.eventuate.cdc</groupId>
+        <artifactId>eventuate-cdc-rocketmq-parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <groupId>help.lixin.eventuate.cdc</groupId>
+    <artifactId>rocketmq-eventuate-cdc-data-producer-wrappers</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>rocketmq-eventuate-cdc-data-producer-wrappers ${project.version}</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.eventuate.cdc</groupId>
+            <artifactId>eventuate-cdc-data-producer-wrappers</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>help.lixin.eventuate</groupId>
+            <artifactId>eventuate-messaging-rocketmq-producer</artifactId>
+        </dependency>
+    </dependencies>
+</project>
